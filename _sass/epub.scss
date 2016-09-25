@@ -1,0 +1,73 @@
+// WHAT IS THIS?
+// This is typography for the Electric Book Elements theme (see http://electricbook.io).
+// It is built with Sass. (See http://sass-lang.com, and http://jekyllrb.com/docs/assets for how Jekyll implements Sass.)
+// It sets defaults that can be overridden in each book's own stylesheets, where the variables here are duplicated.
+
+// First, let's set character encoding. Don't change this.
+@charset "utf-8";
+
+// -------------
+// Set variables
+// -------------
+
+// Edition suffix: identifies this edition in certain classes (e.g. in _epub-fitting.scss).
+$edition-suffix: null !default;
+
+$font-text-main: "Crimson", serif !default;
+$font-text-secondary: "Crimson", sans-serif !default;
+$font-display-main: "Crimson", sans-serif !default;
+$font-display-secondary: "Crimson", serif !default;
+$font-code: "Inconsolata", monospace !default;
+
+$font-size-default: 1.2em !default;
+$line-height-default: 1.5em !default;
+
+// ----------------------------------------------------
+// Import font files (@font-face) for fonts you specify
+// ----------------------------------------------------
+
+// Import fonts from book-specific CSS.
+
+// ---------------------
+// Theme modules
+// ---------------------
+
+// Reset ereader CSS as best we can
+@import "partials/epub-css-reset";
+
+// Structural HTML components
+@import "partials/epub-wrappers.scss"; // 
+
+// Default typography
+@import "partials/epub-base-typography.scss"; // 
+
+// Book parts
+@import "partials/epub-cover"; // 
+@import "partials/epub-title-page"; // 
+@import "partials/epub-copyright-page"; // 
+@import "partials/epub-dedications"; // 
+@import "partials/epub-epigraphs"; // 
+@import "partials/epub-toc"; // 
+
+// Book-feature classes
+@import "partials/epub-bibliographies"; // 
+@import "partials/epub-boxes"; // 
+@import "partials/epub-buttons"; // 
+@import "partials/epub-figures"; // 
+@import "partials/epub-glossary"; //
+@import "partials/epub-index"; // 
+@import "partials/epub-maths"; // 
+@import "partials/epub-notes"; // 
+@import "partials/epub-openers"; // 
+@import "partials/epub-pullquotes"; // 
+@import "partials/epub-quotations"; // 
+@import "partials/epub-tables"; // 
+@import "partials/epub-valedictions"; // 
+@import "partials/epub-verse"; // 
+
+// Type-control classes
+@import "partials/epub-smallcaps"; // 
+@import "partials/epub-fitting"; // 
+
+// Logic (if this then that)
+@import "partials/epub-reset-sequences.scss"; // 
