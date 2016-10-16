@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
   spec.email         = ["arthur@arthurattwell.com"]
 
   spec.summary       = %q{A Jekyll theme for use with the Electric Book, a template for making books, ebooks and book-like websites}
-  spec.description   = %q{This is a theme for the Electric Book, a Jekyll template for making books, ebooks and book-like websites. Use it in conjunction with the Electric Book jekyll template. Documentation at electricbook.io.}
-  spec.homepage      = "http://electricbook.io"
+  spec.description   = %q{This is a theme for the Electric Book, a Jekyll template for making books, ebooks and book-like websites. Use it in conjunction with the Electric Book jekyll template. Documentation at electricbook.works.}
+  spec.homepage      = "http://electricbook.works"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

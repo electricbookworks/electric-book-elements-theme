@@ -1,20 +1,23 @@
-/*
- * Bibliographies set as lists (similar in appearance to lines of verse set as a list with indented runovers
- */
+$epub-bibliographies: true !default;
+@if $epub-bibliographies {
 
-.bibliography {
-	text-indent: 0;
-	margin: 1em 0;
-}
-.bibliography + p {
-	text-indent: 0; /* Paragraphs after bibliographies should be flush left */
-}
-ul.bibliography {
-	list-style-type: none;
-	padding: 0;
-	margin: 1em 0;
-}
-ul.bibliography li {
-	text-indent: -2em;
-	margin-left: 2em;
+    // Bibliographies set as lists (similar in appearance to lines of verse set as a list with indented runovers)
+
+    .bibliography {
+    	text-indent: 0;
+    	margin: $line-height-default 0;
+    }
+    .bibliography + p {
+    	text-indent: 0; // Paragraphs after bibliographies should be flush left
+    }
+    ul.bibliography {
+    	list-style-type: none;
+    	padding: 0;
+    	margin: $line-height-default 0;
+    }
+    ul.bibliography li {
+    	text-indent: -($line-height-default);
+    	margin-left: ($line-height-default * 2);
+    }
+
 }

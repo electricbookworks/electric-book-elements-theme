@@ -1,16 +1,27 @@
-// Shrink the font size
-.shrink {
-    font-size: 0.7em; /* Useful for wide tables */
-}
+$epub-fitting: true !default;
+@if $epub-fitting {
 
-// These classes control letter-spacing (tracking) in print, usually to save widows and orphans.
-// On screen, they shouldn't do anything except inherit formatting.
-@for $i from 1 through 100 {
-  $add-space: $i * 0.001em;
-  .tighten-#{$i}#{$edition-suffix} {
-    font-style: inherit;
+  // These classes control letter-spacing (tracking) in print, 
+  // usually to save widows and orphans.
+  // On screen, they shouldn't do anything except inherit formatting.
+  @for $i from 1 through 100 {
+    $add-space: $i * 0.001em;
+    .tighten-#{$i}#{$edition-suffix} {
+      font-style: inherit;
+      font-weight: inherit;
+    }
+    .loosen-#{$i}#{$edition-suffix} {
+      font-style: inherit;
+      font-weight: inherit;
+    }
   }
-  .loosen-#{$i}#{$edition-suffix} {
-    font-style: inherit;
+
+  // Shrink the font size.
+  // Useful for wide tables.
+  .shrink {
+      font-size: 0.7em;
+      font-style: inherit;
+      font-weight: inherit;
   }
+
 }

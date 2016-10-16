@@ -1,14 +1,19 @@
-/* 
- * Classes for openers
- */
+$print-openers: true !default;
+@if $print-openers {
 
-p.first { /* A paragraph that starts a new set of paragraphs, with a gap above it. */
-	text-indent: 0;
-	margin-top: $line-height-default; /* Overridden by later rule for paragraphs after headings, blockquotes, lists and definition lists */
-}
-p.chapter-number {
-	font-weight: bold;
-	font-size: $font-size-default * 4;
-	line-height: $line-height-default * 4;
-	margin: 0 0 $line-height-default 0;
+    // A paragraph that starts a new set of paragraphs, with a gap above it.
+    .first {
+    	text-indent: 0;
+    	margin-top: $line-height-default; // Overridden by later rule for paragraphs after headings, blockquotes, lists and definition lists
+    }
+    .chapter-number {
+        display: block;
+    	font-size: $font-size-default * 2;
+    	line-height: $line-height-default * 2;
+    	margin: 0 0 $line-height-default 0;
+        text-align: center;
+        font-style: inherit;
+        font-weight: inherit;
+    }
+
 }

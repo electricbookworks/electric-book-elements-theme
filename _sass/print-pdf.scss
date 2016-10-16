@@ -1,10 +1,11 @@
-// WHAT IS THIS?
-// This is typography for the Electric Book Classic theme (http://electricbook.io).
+// What is this?
+// -------------
+// This is typography for the Electric Book Elements theme (see http://electricbook.works).
 // It is built with Sass. (See http://sass-lang.com, and http://jekyllrb.com/docs/assets for how Jekyll implements Sass.)
-// Jekyll will compile the finished CSS for your books in _site/_themes/classic/css.
+// It sets defaults that can be overridden in each book's own stylesheets, where the variables here are duplicated.
 // 
-// HOW TO USE IT
-//
+// How to use it
+// -------------
 // Edit the default variables below.
 // Comment/uncomment or add font imports below.
 // Add your own custom CSS at the bottom.
@@ -23,7 +24,8 @@
 $edition-suffix: null !default;
 
 // First, we set several variables related to overall page setup.
-$page-size: 129mm 198mm !default; // Width, then height. 129×198 is B-format (Lightning Source compatible)
+$page-width: 129mm !default;
+$page-height: 198mm !default;
 $margin-top: 15mm !default;
 $margin-bottom: 20mm !default;
 $margin-outside: 13mm !default;
@@ -31,6 +33,11 @@ $margin-inside: 19mm !default;
 $bleed: 3mm !default;
 $trim: 3mm !default;
 $crop-marks: crop !default; // crop | none
+
+// Colours
+$color-light: cmyk(0,0,0,0.2) !default;
+$color-accent: cmyk(0,0,0,1) !default;
+$color-links: inherit !default;
 
 // PDF file setup options
 $black-ink: true !default; // true or rich (true for pure black or rich for rich black)
@@ -49,6 +56,8 @@ $font-code: "Inconsolata", monospace !default;
 // Finally, we set variables related to text flow.
 $font-size-default: 11pt !default;
 $line-height-default: 15pt !default; // Set in points. For consistent baselines, all other line heights and vertical spaces are based on this.
+$font-size-smaller: 0.8 !default; // How much smaller than font-size-default for features like sidenotes and footers?
+$font-size-bigger: 2 !default; // How many times bigger than font-size-default for features like headings and pullquotes? Use whole numbers to preserve baseline grid.
 $text-align: left !default;
 $orphans: 1 !default; // Minimum number of lines that must be left at the bottom of the first page
 $widows: 1 !default; // Minimum number of lines that must be left at the top of the second page
@@ -57,10 +66,10 @@ $letter-spacing-text: 0em !default; // Default letter-spacing for p, ul, ol, dl.
 // Hyphenation
 // Variables here apply to p, ul, ol, dl
 $hyphenation: auto !default; // Can be auto, none, or manual (only breaks on hyphens and soft hyphens)
-$hyphenation-dictionary: "" !default; // File name of dictionary in css/dictionaries. Overrides PrinceXML built-in hyphenation.
-$hyphenate-after: 3 !default; /* Minimum letters on new line after hyphen */
-$hyphenate-before: 3 !default; /* Minimum letters at end of line before hyphen */
-$hyphenate-lines: 1 !default; /* Maximum number of consecutive lines ending with hyphens */
+$hyphenation-dictionary: "" !default; // Path to dictionary file, relative to `/book/styles`. E.g. "../../assets/hyph.dic". Overrides PrinceXML built-in hyphenation.
+$hyphenate-after: 3 !default; // Minimum letters on new line after hyphen
+$hyphenate-before: 3 !default; // Minimum letters at end of line before hyphen
+$hyphenate-lines: 1 !default; // Maximum number of consecutive lines ending with hyphens
 
 // Should chapters start on a right-hand page (recto) or on any page?
 // This setting applies to the frontmatter, dedication-page, epigraph-page and chapter page styles.
@@ -154,12 +163,7 @@ $highlight-loosened: inherit !default;
 
 // ---------------------
 // Reset PrinceXML CSS
-@import "partials/print-princexml-reset-css";
-
-// ---------------------
-// Hide unwanted elements
-@import "partials/hide-footer";
-@import "partials/hide-nav-bar";
+@import "partials/print-css-reset";
 
 // --------------------------------------------
 // Page setup and control, avoid changing these
@@ -167,7 +171,6 @@ $highlight-loosened: inherit !default;
 @import "partials/print-page-setup"; // Sets up the page from your variables
 @import "partials/print-page-break-tools"; // Provides classes for semantic page breaks
 @import "partials/print-hide-non-printing"; // Hides anything .non-printing
-@import "partials/print-hide-video"; // Hides video from print output
 @import "partials/print-fitting"; // Classes for floating, tracking, shrinking, etc.
 @import "partials/print-hyphenation"; // Sets hyphenation dictionary
 
@@ -176,11 +179,12 @@ $highlight-loosened: inherit !default;
 @import "partials/print-start-on-recto-or-verso"; // Starts chapters on a left- or right-hand-page
 @import "partials/print-page-start-depth"; // Sets a top margin on opening pages
 @import "partials/print-base-typography"; // Default typography for HTML elements
+@import "partials/print-buttons";
 @import "partials/print-verse"; // Default typography for verse, poetry, lyrics
 @import "partials/print-bibliographies";
 @import "partials/print-epigraphs"; // 
 @import "partials/print-dedications"; // 
-@import "partials/print-definition-lists"; // Including .glossary
+@import "partials/print-glossaries"; // Including .glossary
 @import "partials/print-pullquotes"; // Supports .pullquote
 @import "partials/print-boxes"; // 
 @import "partials/print-code"; // For computer code and preformatted text
@@ -190,13 +194,61 @@ $highlight-loosened: inherit !default;
 @import "partials/print-title-pages"; // Half-title and title pages
 @import "partials/print-copyright-page"; // 
 @import "partials/print-toc"; // Tables of contents
-@import "partials/print-front-cover"; // Front-cover image for PDF ebooks
+@import "partials/print-cover"; // Front-cover image for PDF ebooks
 @import "partials/print-smallcaps"; // 
 @import "partials/print-maths"; // 
 @import "partials/print-valedictions"; // 
-@import "partials/print-quotations"; // 
+@import "partials/print-sources"; // 
 @import "partials/print-openers"; // 
 @import "partials/print-index"; // 
 @import "partials/print-reset-sequences"; // Resets p indents, margins after other elements. Must be last @import in list.
 @import "partials/print-page-headers-footers-content"; // Sets content for headers and footers
 @import "partials/print-page-headers-footers-style"; // Sets styling for headers and footers
+
+// ---------------------------------
+// Set to false to turn partials off
+// ---------------------------------
+
+// ---------------------
+// Reset PrinceXML CSS
+$print-css-reset: true;
+
+// --------------------------------------------
+// Page setup and control, avoid changing these
+$print-pdf-view: true; // Sets the default initial view on PDFs
+$print-page-setup: true; // Sets up the page from your variables
+$print-page-break-tools: true; // Provides classes for semantic page breaks
+$print-hide-non-printing: true; // Hides anything .non-printing
+$print-fitting: true; // Classes for floating, tracking, shrinking, etc.
+$print-hyphenation: true; // Sets hyphenation dictionary
+
+// ---------------------
+// Theme modules
+$print-start-on-recto-or-verso: true; // Starts chapters on a left- or right-hand-page
+$print-page-start-depth: true; // Sets a top margin on opening pages
+$print-base-typography: true; // Default typography for HTML elements
+$print-buttons: true;
+$print-verse: true; // Default typography for verse, poetry, lyrics
+$print-bibliographies: true;
+$print-epigraphs: true; // 
+$print-dedications: true; // 
+$print-glossaries: true; // Including .glossary
+$print-pullquotes: true; // Supports .pullquote
+$print-boxes: true; // 
+$print-code: true; // For computer code and preformatted text
+$print-tables: true; // 
+$print-figures: true; // 
+$print-notes: true; // Footnotes, endnotes, sidenotes
+$print-title-pages: true; // Half-title and title pages
+$print-copyright-page: true; // 
+$print-toc: true; // Tables of contents
+$print-cover: true; // Front-cover image for PDF ebooks
+$print-smallcaps: true; // 
+$print-maths: true; // 
+$print-valedictions: true; // 
+$print-sources: true; // 
+$print-openers: true; // 
+$print-index: true; // 
+$print-reset-sequences: true; // Resets p indents, margins after other elements. Must be last @import in list.
+$print-page-headers-footers-content: true; // Sets content for headers and footers
+$print-page-headers-footers-style: true; // Sets styling for headers and footers

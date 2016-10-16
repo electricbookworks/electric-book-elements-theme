@@ -1,33 +1,35 @@
-/*
- * Footnotes, endnotes and sidenotes
- * Note: What kramdown creates as .footnotes are actually, in a paged book context, endnotes.
- */
+$epub-notes: true !default;
+@if $epub-notes {
 
-.footnotes {
-  margin: 2em 0 0 0;
-  border-top: 1px solid #e9e9e9;
-}
-.footnotes p {
-	text-indent: 0;
-}
-sup:target {
-	padding-top: 3.5em; /* Prevents footnote references from disappearing below the fixed nav bar when linked to. */
-}
-.sidenote {
-	font-family: $font-text-secondary;
-	clear: both;
-	float: right;
-	min-width: 5em;
-	padding: 0.5em;
-	border-top: 1px solid #eeeeee;
-	text-indent: 0;
-	font-size: 0.8em;
-	font-style: inherit;
-	line-height: 120%;
-	position: relative;
-	max-width: 40%;
-	margin: 0 0 0.5em 0.5em;
-	background-color: white;
-}
+	// Footnotes, endnotes and sidenotes
+	// Note: Conventionally, HTML .footnotes are in a book context endnotes.
 
-.bottom {} /* Only used for print output, ignored for screen. */
+	.footnotes {
+	  margin: ($line-height-default * 2) 0 0 0;
+	  border-top: 1px solid $color-light;
+	}
+	.footnotes p {
+		text-indent: 0;
+	}
+	.sidenote {
+		font-family: $font-text-secondary;
+		clear: both;
+		float: right;
+		min-width: 5em;
+		padding: $line-height-default / 2;
+		border-top: 1px solid $color-light;
+		text-indent: 0;
+		font-size: $font-size-default * $font-size-smaller;
+		line-height: $line-height-default * $font-size-smaller;
+		font-style: inherit;
+		position: relative;
+		max-width: 40%;
+		margin: 0 0 ($line-height-default / 2) ($line-height-default / 2);
+		background-color: white;
+	}
+
+	// No media queries for epub, since they're not widely supported.
+
+	// .bottom {} // Only used for print output, ignored for screen.
+
+}

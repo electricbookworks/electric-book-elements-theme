@@ -1,16 +1,16 @@
-/*
- * Pull quotes, useful for blockquotes and definition lists 
- */
+$epub-pullquotes: true !default;
+@if $epub-pullquotes {
 
-.pullquote {
-	text-indent: 0;
-	font-size: 1.5em;
-	font-style: italic;
-	text-align: center;
-	line-height: 115%;
-	margin: 1em 0;
-    max-width: 23em;
-}
-.pullquote + p {
-	text-indent: 0;
+    // Pull quotes
+
+    .pullquote {
+        text-indent: 0;
+        font-size: $font-size-default * $font-size-bigger;
+        text-align: center;
+        margin: $line-height-default 0;
+    }
+    .pullquote + p {
+        text-indent: 0;
+    }
+
 }

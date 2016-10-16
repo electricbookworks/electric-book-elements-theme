@@ -1,5 +1,10 @@
-/* Automatic fractions */
-.fractions { 
-	font-variant: prince-opentype(frac);
-	font-style: inherit;
+$print-maths: true !default;
+@if $print-maths {
+
+    // Automatic fractions
+    .fractions { 
+    	font-variant: prince-opentype(frac);
+    	font-style: inherit;
+    }
+
 }
