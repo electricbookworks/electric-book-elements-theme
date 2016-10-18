@@ -66,6 +66,70 @@ $hyphenate-after: 3 !default; // Minimum letters on new line after hyphen
 $hyphenate-before: 3 !default; // Minimum letters at end of line before hyphen
 $hyphenate-lines: 1 !default; // Maximum number of consecutive lines ending with hyphens
 
+// Website sidebar/navigation
+$search-enabled: true !default;
+$nav-bar-width: 15em !default;
+$nav-bar-background-color: white !default;
+$nav-bar-search-background-color: white !default;
+$nav-bar-parent-background-color: white !default;
+$nav-bar-parent-text-color: black !default;
+$nav-bar-parent-hover-color: #4f89d2 !default;
+$nav-bar-parent-text-hover-color: white !default;
+$nav-bar-child-background-color: grey !default;
+$nav-bar-child-text-color: black !default;
+$nav-bar-child-hover-color: #4f89d2 !default;
+$nav-bar-child-text-hover-color: white !default;
+
+// ---------------------------------
+// Set to false to turn partials off
+// ---------------------------------
+
+// Reset browser CSS as best we can
+$web-css-reset: true !default;
+
+// Structural HTML components
+$web-wrappers: true !default;
+
+// Default typography
+$web-base-typography: true !default;
+
+// Navigation
+$web-nav-bar: true !default;
+$web-footer: true !default;
+
+// Book parts
+$web-cover: true !default;
+$web-title-pages: true !default;
+$web-copyright-page: true !default;
+$web-dedications: true !default;
+$web-epigraphs: true !default;
+$web-toc: true !default;
+
+// Book-feature classes
+$web-bibliographies: true !default;
+$web-boxes: true !default;
+$web-buttons: true !default;
+$web-code: true !default;
+$web-glossaries: true !default;
+$web-figures: true !default;
+$web-index: true !default;
+$web-maths: true !default;
+$web-notes: true !default;
+$web-openers: true !default;
+$web-pullquotes: true !default;
+$web-sources: true !default;
+$web-tables: true !default;
+$web-valedictions: true !default;
+$web-verse: true !default;
+$web-video: true !default;
+
+// Type-control classes
+$web-smallcaps: true !default;
+$web-fitting: true !default;  // E.g. tracking and shrinking
+
+// Logic (if this then that)
+$web-reset-sequences: true !default; // This should stay last in the @import list
+
 // ----------------------------------------------------
 // Import font files (@font-face) for fonts you specify
 // ----------------------------------------------------
@@ -121,53 +185,3 @@ $hyphenate-lines: 1 !default; // Maximum number of consecutive lines ending with
 
 // Logic (if this then that)
 @import "partials/web-reset-sequences"; // This should stay last in the @import list
-
-// ---------------------------------
-// Set to false to turn partials off
-// ---------------------------------
-
-// Reset browser CSS as best we can
-$web-css-reset: true !default;
-
-// Structural HTML components
-$web-wrappers: true !default;
-
-// Default typography
-$web-base-typography: true !default;
-
-// Navigation
-$web-nav-bar: true !default;
-$web-footer: true !default;
-
-// Book parts
-$web-cover: true !default;
-$web-title-pages: true !default;
-$web-copyright-page: true !default;
-$web-dedications: true !default;
-$web-epigraphs: true !default;
-$web-toc: true !default;
-
-// Book-feature classes
-$web-bibliographies: true !default;
-$web-boxes: true !default;
-$web-buttons: true !default;
-$web-code: true !default;
-$web-glossaries: true !default;
-$web-figures: true !default;
-$web-index: true !default;
-$web-maths: true !default;
-$web-notes: true !default;
-$web-openers: true !default;
-$web-pullquotes: true !default;
-$web-sources: true !default;
-$web-tables: true !default;
-$web-valedictions: true !default;
-$web-verse: true !default;
-$web-video: true !default;
-
-// Type-control classes
-$web-smallcaps: true !default;
-$web-fitting: true !default;  // E.g. tracking and shrinking
-
-// Logic (if this then that)
-$web-reset-sequences: true !default; // This should stay last in the @import list

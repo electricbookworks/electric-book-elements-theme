@@ -2,10 +2,10 @@ $web-wrappers: true !default;
 @if $web-wrappers {
 
     #wrapper {
-    	clear: both;
-    	max-width: 40em;
-    	margin: auto;
-    	padding: 0 0.3em 0 0.3em;
+        clear: none;
+        margin-left: $nav-bar-width;
+        padding: 0 2em;
+        max-width: $max-width-default;
     }
 
 }

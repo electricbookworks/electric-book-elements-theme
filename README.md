@@ -56,6 +56,7 @@ This theme is intended for use with the [Electric Book Jekyll template](https://
 #### Differences between Classic and Elements themes
 
 * Far simpler styles for easier customisation
+* Powerful sidebar menu
 * New variables for quicker config, e.g. colours and font-size differences
 * No built-in support for `h1 strong:first-of-type`
 * Print styling handles buttons by displaying link
