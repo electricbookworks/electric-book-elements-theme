@@ -7,7 +7,9 @@ $web-notes: true !default;
 
 	.footnotes {
 	  margin: ($line-height-default * 2) 0 0 0;
+	  padding: $line-height-default 0;
 	  border-top: 1px solid $color-light;
+	  color: $color-mid;
 	}
 	.footnotes p {
 		text-indent: 0;

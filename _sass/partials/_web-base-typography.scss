@@ -6,6 +6,7 @@ $web-base-typography: true !default;
     body {
         margin: 0;
         padding: 0;
+        background-color: $color-background;
         font-family: $font-text-main;
         font-size: $font-size-default;
         line-height: $line-height-default;
@@ -29,8 +30,8 @@ $web-base-typography: true !default;
     h1 {
         font-family: $font-display-main;
         font-size: $font-size-default * $font-size-bigger;
+        font-weight: bold;
         margin: ($line-height-default) 0 ($line-height-default * 0.5) 0;
-        text-align: center;
     }
     h2 {
         font-size: $font-size-default * ($font-size-bigger * 0.75);
@@ -41,16 +42,30 @@ $web-base-typography: true !default;
         font-style: italic;
         font-weight: normal;
     }
-    p, ul, ol {}
     p {
-    	margin: 0;
-    	text-indent: $font-size-default;
+        margin: 0;
+        text-indent: $font-size-default;
     }
     p:first-of-type {
-    	text-indent: 0;
+        text-indent: 0;
     }
     sup, sub {
-    	line-height: 100%;
+        line-height: 100%;
+        font-size: 1em * $font-size-smaller;
+    }
+    sup {
+        vertical-align: super;
+    }
+    sub {
+        vertical-align: sub;
+    }
+    ol {
+        list-style: decimal;
+        list-style-position: inside;
+    }
+    ul {
+        list-style-position: inside;
+        list-style-type: disc;
     }
     ul ul, ol ol, blockquote ul ul, blockquote ol ol {
     	margin-bottom: 0;

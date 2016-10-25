@@ -40,11 +40,13 @@ $font-code: "Inconsolata", monospace !default;
 // and don't use percentages, which will break layouts computed by multiplying this value.
 $font-size-default: 1.2em !default;
 $line-height-default: 1.5em !default;
-$font-size-smaller: 0.8 !default; // How much smaller than font-size-default for features like sidenotes and footers?
+$font-size-smaller: 0.7 !default; // How much smaller than font-size-default for features like sidenotes and footers?
 $font-size-bigger: 2 !default; // How many times bigger than font-size-default for features like headings and pullquotes?
 
 // Colours
-$color-light: #cccccc !default;
+$color-background: white !default;
+$color-light: #e0e0e0 !default;
+$color-mid: #9c9c9c !default;
 $color-accent: #000000 !default;
 $color-links: #5f738c !default;
 
@@ -68,6 +70,7 @@ $hyphenate-lines: 1 !default; // Maximum number of consecutive lines ending with
 
 // Website sidebar/navigation
 $search-enabled: true !default;
+$nav-scrollbar: false !default;
 $nav-bar-width: 15em !default;
 $nav-bar-background-color: white !default;
 $nav-bar-search-background-color: white !default;
@@ -75,7 +78,7 @@ $nav-bar-parent-background-color: white !default;
 $nav-bar-parent-text-color: black !default;
 $nav-bar-parent-hover-color: #4f89d2 !default;
 $nav-bar-parent-text-hover-color: white !default;
-$nav-bar-child-background-color: grey !default;
+$nav-bar-child-background-color: $color-light !default;
 $nav-bar-child-text-color: black !default;
 $nav-bar-child-hover-color: #4f89d2 !default;
 $nav-bar-child-text-hover-color: white !default;

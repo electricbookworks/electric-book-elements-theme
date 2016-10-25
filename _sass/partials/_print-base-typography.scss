@@ -65,6 +65,13 @@ $print-base-typography: true !default;
 
 	ul, ol {
 		margin: 0 0 $line-height-default 0;
+    	list-style-position: inside;
+	}
+	ol {
+		list-style: decimal;
+	}
+	ul {
+        list-style-type: disc;
 	}
 	ol ol {
 		list-style-type: lower-alpha;
@@ -120,9 +127,16 @@ $print-base-typography: true !default;
 	/* Super and subscripts */
 
 	// Prevent them from increasing line height in print output
-	sup, sub {
-		line-height: 0;
-	}
+    sup, sub {
+        line-height: 0;
+        font-size: 1em * $font-size-smaller;
+    }
+    sup {
+        vertical-align: super;
+    }
+    sub {
+        vertical-align: sub;
+    }
 
 	/* Horizontal rules */
 
