@@ -4,7 +4,7 @@ $web-footer: true !default;
 	// Footer
 
 	#footer {
-		position: fixed;
+		// position: fixed; // Make this fixed to make footer always visible
 		bottom: 0;
 		background-color: $color-background;
 		font-family: $font-text-secondary;

@@ -40,6 +40,9 @@ $line-height-default: 1.5em !default;
 $font-size-smaller: 0.8 !default; // How much smaller than font-size-default for features like sidenotes and footers?
 $font-size-bigger: 2 !default; // How many times bigger than font-size-default for features like headings and pullquotes?
 
+// Buttons
+$button-border-radius: 0.1em !default; // Roundness of button corners.
+
 // Colours
 $color-light: #cccccc !default;
 $color-accent: #000000 !default;

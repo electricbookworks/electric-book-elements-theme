@@ -97,7 +97,7 @@
     <meta property="og:image" content="{{ site.canonical-url }}/assets/{{ series-image }}" />
     {% endif %}
 
-    {% if page.style == 'home' %}
+    {% if page.style == 'home' or page.style == 'search' %}
     {% for book in site.data.meta.works %}
     <link rel="stylesheet" type="text/css" media="screen" href="{{ book.directory }}/styles/{{ page.stylesheet-web }}" />
     <link rel="stylesheet" type="text/css" media="print" href="{{ book.directory }}/styles/{{ page.stylesheet-screen-pdf }}" />

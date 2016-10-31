@@ -10,7 +10,7 @@ $print-buttons: true !default;
         font-family: $font-text-secondary;
         padding: $line-height-default / 2;
         margin: 0;
-        border-radius: 0.2em;
+        border-radius: $button-border-radius;
         text-decoration: none;
         content: attr(href);
     }
