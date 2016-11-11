@@ -95,6 +95,7 @@ $hyphenate-lines: 1 !default; // Maximum number of consecutive lines ending with
 @import "partials/epub-code"; // 
 @import "partials/epub-figures"; // 
 @import "partials/epub-glossaries"; //
+@import "partials/epub-highlighter"; //
 @import "partials/epub-index"; // 
 @import "partials/epub-maths"; // 
 @import "partials/epub-notes"; // 
@@ -140,6 +141,7 @@ $epub-buttons: true !default; //
 $epub-code: true !default; // 
 $epub-figures: true !default; // 
 $epub-glossaries: true !default; //
+$epub-highlighter: true !default; //
 $epub-index: true !default; // 
 $epub-maths: true !default; // 
 $epub-notes: true !default; // 

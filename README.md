@@ -1,5 +1,7 @@
 # Electric Book Elements Theme
 
+**Development on pause. Do not use this code.**
+
 This is a theme for use with the Electric Book, a Jekyll template for making books, ebooks and book-like websites.
 
 ## Installation
